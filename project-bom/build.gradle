@@ -1,0 +1,15 @@
+plugins {
+	id 'java-platform'
+}
+
+description = '本项目物料清单'
+
+javaPlatform {
+}
+
+dependencies {
+	constraints {
+		// swagger
+		api 'org.springdoc:springdoc-openapi-starter-webmvc-ui:3.0.2'
+	}
+}

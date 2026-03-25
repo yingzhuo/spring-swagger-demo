@@ -1,0 +1,45 @@
+plugins {
+	id 'buildlogic.java-conventions'
+	id 'buildlogic.spring-boot-conventions'
+	id 'buildlogic.check-conventions'
+	id 'buildlogic.docker-conventions'
+	id 'buildlogic.distribution-conventions'
+	id 'buildlogic.license-conventions'
+}
+
+description = '主程序'
+
+ext {
+	set('dockerImageTag', 'yingzhuo/java-gradle-app-skeleton:latest')
+}
+
+dependencies {
+
+	// 本项目BOM
+	api platform(project(':project-bom'))
+	annotationProcessor platform(project(':project-bom'))
+
+	// 本项目其他子工程
+	// (暂时没有)
+
+	// spring-boot
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compileOnly 'org.springframework.boot:spring-boot-configuration-processor'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	api 'org.springframework.boot:spring-boot-starter-web'
+	api 'org.springframework.boot:spring-boot-starter-actuator'
+	api 'org.springframework.boot:spring-boot-starter-aspectj'
+	api 'org.springframework.boot:spring-boot-starter-logging'
+	api 'org.springframework.boot:spring-boot-starter-validation'
+	api 'org.springframework.boot:spring-boot-starter-json'
+
+	// lombok
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// slf4j
+	api 'org.slf4j:slf4j-api'
+
+	// swagger
+	api 'org.springdoc:springdoc-openapi-starter-webmvc-ui'
+}

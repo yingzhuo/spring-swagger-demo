@@ -7,7 +7,6 @@ pluginManagement {
 		maven { name = 'Spring (Milestone)'; url = 'https://repo.spring.io/milestone' }
 		maven { name = 'Spring (Snapshot)'; url = 'https://repo.spring.io/snapshot' }
 		mavenCentral()
-		google()
 	}
 }
 
@@ -24,7 +23,6 @@ dependencyResolutionManagement {
 		maven { name = 'Spring (Release)'; url = 'https://repo.spring.io/release' }
 		maven { name = 'Spring (Milestone)'; url = 'https://repo.spring.io/milestone' }
 		maven { name = 'Spring (Snapshot)'; url = 'https://repo.spring.io/snapshot' }
-		google()
 	}
 
 	repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS

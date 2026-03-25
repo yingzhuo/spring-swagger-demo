@@ -2,8 +2,6 @@ plugins {
 	id 'groovy-gradle-plugin'
 }
 
-description = '构建逻辑'
-
 ['../gradle.properties', './gradle.properties']
 	.stream()
 	.forEach { filePath ->

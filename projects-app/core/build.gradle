@@ -1,15 +1,8 @@
 plugins {
 	id 'buildlogic.java-conventions'
-	id 'buildlogic.spring-boot-conventions'
 	id 'buildlogic.check-conventions'
-	id 'buildlogic.distribution-conventions'
+	id 'buildlogic.spring-boot-conventions'
 	id 'buildlogic.license-conventions'
-}
-
-description = '主程序'
-
-ext {
-	set('dockerImageTag', 'yingzhuo/java-gradle-app-skeleton:latest')
 }
 
 dependencies {

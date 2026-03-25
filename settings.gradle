@@ -7,7 +7,6 @@ pluginManagement {
 		maven { name = 'Spring (Release)'; url = 'https://repo.spring.io/release' }
 		maven { name = 'Spring (Milestone)'; url = 'https://repo.spring.io/milestone' }
 		maven { name = 'Spring (Snapshot)'; url = 'https://repo.spring.io/snapshot' }
-		google()
 	}
 }
 
@@ -15,7 +14,6 @@ plugins {
 	id 'io.spring.dependency-management' version "$dependencyManagementPluginVersion" apply false
 	id 'org.springframework.boot' version "$springBootVersion" apply false
 	id 'com.gorylenko.gradle-git-properties' version "$gitPluginVersion" apply false
-	id 'org.hidetake.ssh' version "$sshPluginVersion" apply false
 	id 'dev.yumi.gradle.licenser' version "$licensePluginVersion" apply false
 }
 
@@ -28,7 +26,6 @@ dependencyResolutionManagement {
 		maven { name = 'Spring (Release)'; url = 'https://repo.spring.io/release' }
 		maven { name = 'Spring (Milestone)'; url = 'https://repo.spring.io/milestone' }
 		maven { name = 'Spring (Snapshot)'; url = 'https://repo.spring.io/snapshot' }
-		google()
 	}
 
 	repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS

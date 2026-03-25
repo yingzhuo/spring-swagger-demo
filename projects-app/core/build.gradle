@@ -2,7 +2,6 @@ plugins {
 	id 'buildlogic.java-conventions'
 	id 'buildlogic.spring-boot-conventions'
 	id 'buildlogic.check-conventions'
-	id 'buildlogic.docker-conventions'
 	id 'buildlogic.distribution-conventions'
 	id 'buildlogic.license-conventions'
 }

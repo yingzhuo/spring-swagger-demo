@@ -16,13 +16,10 @@
 
 package io.github.yingzhuo.showcase.core;
 
-import io.github.yingzhuo.showcase.core.logback.LogbackConfig;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 @EnableAsync
-@EnableConfigurationProperties(LogbackConfig.class)
 @Configuration
 public class ApplicationBootBean {
 }

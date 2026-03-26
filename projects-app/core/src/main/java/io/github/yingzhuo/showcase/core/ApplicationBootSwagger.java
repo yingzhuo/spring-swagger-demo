@@ -18,11 +18,15 @@ package io.github.yingzhuo.showcase.core;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ApplicationBootSwagger {
+
+	@Value("${spring.application.version}")
+	private String applicationVersion;
 
 	@Bean
 	public OpenAPI customOpenAPI() {
@@ -30,7 +34,8 @@ public class ApplicationBootSwagger {
 			.info(new Info()
 				.title("项目API文档标题")
 				.description("这里是项目的详细接口文档描述")
-				.version("v1.0.0")
+				.version(this.applicationVersion)
 			);
 	}
+
 }

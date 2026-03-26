@@ -14,28 +14,44 @@
  * limitations under the License.
  */
 
-package io.github.yingzhuo.showcase.core.vo;
+package io.github.yingzhuo.showcase.model.entity;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
+/**
+ * 宠物
+ */
 @Data
-@Schema(description = "用户信息响应数据")
-public class UserVO implements Serializable {
+@Schema(description = "宠物实体")
+public class Pet implements Serializable {
 
-	@Schema(description = "用户ID", example = "1001", accessMode = Schema.AccessMode.READ_ONLY)
-	private Long id;
+	@Schema(
+		description = "ID",
+		example = "00000000000000000000000000000001"
+	)
+	private String id;
 
-	@Schema(description = "用户名", example = "zhangsan")
-	private String username;
+	@Schema(
+		description = "宠物名称",
+		example = "喵喵"
+	)
+	private String name;
 
-	@Schema(description = "邮箱", example = "zhangsan@example.com")
-	private String email;
+	@Schema(
+		description = "出生日期",
+		examples = {
+			"2025-12-25",
+			"2025/12/25"
+		}
+	)
+	private LocalDate dob;
 
-	@Schema(description = "注册时间", example = "2023-01-01T12:00:00")
-	private LocalDateTime createTime;
-
+	@Schema(
+		description = "性别"
+	)
+	private Sex sex;
 }

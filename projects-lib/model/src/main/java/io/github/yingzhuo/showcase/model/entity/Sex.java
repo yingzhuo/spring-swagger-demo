@@ -14,7 +14,25 @@
  * limitations under the License.
  */
 
-@NullMarked
-package io.github.yingzhuo.showcase.core.entity;
+package io.github.yingzhuo.showcase.model.entity;
 
-import org.jspecify.annotations.NullMarked;
+import io.swagger.v3.oas.annotations.media.Schema;
+
+import java.io.Serializable;
+
+/**
+ * 性别
+ */
+public enum Sex implements Serializable {
+
+	@Schema(
+		description = "雄性"
+	)
+	MALE,
+
+	@Schema(
+		description = "雌性"
+	)
+	FEMALE
+
+}

@@ -16,38 +16,30 @@
 
 package io.github.yingzhuo.showcase.core.controller;
 
-import io.github.yingzhuo.showcase.core.dto.UserCreateDTO;
-import io.github.yingzhuo.showcase.core.vo.UserVO;
+import io.github.yingzhuo.showcase.model.dto.PetCreateDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDateTime;
-
 @Slf4j
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/user")
-@Tag(name = "用户模块")
-public class UserController {
+@RequestMapping("/pet")
+@Tag(name = "宠物模块")
+public class PetController {
 
-
-	@PostMapping("/create")
-	@Operation(summary = "创建一个新用户", description = "测试接口 - 创建一个新方块。。。。。。。。。。。。")
-	public UserVO post(@Validated @RequestBody UserCreateDTO dto, BindingResult bindingResult) {
-		var vo = new UserVO();
-		vo.setId(1L);
-		vo.setUsername(dto.getUsername());
-		vo.setEmail(dto.getEmail());
-		vo.setCreateTime(LocalDateTime.now());
-		return vo;
+	@PostMapping
+	@Operation(
+		description = "创建/登记一个新的宠物"
+	)
+	public Object createPet(@RequestBody PetCreateDTO dto, BindingResult bindingResult) {
+		return "ok";
 	}
 
 }

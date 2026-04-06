@@ -16,6 +16,9 @@
 
 package io.github.yingzhuo.showcase.core;
 
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeIn;
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
+import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,6 +26,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@SecurityScheme(
+	name = "AuthHeader",
+	type = SecuritySchemeType.APIKEY,
+	in = SecuritySchemeIn.HEADER,
+	paramName = "X-Auth-Token",
+	description = "自定义请求头鉴权"
+)
 public class ApplicationBootSwagger {
 
 	@Value("${spring.application.version}")

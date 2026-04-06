@@ -18,6 +18,7 @@ package io.github.yingzhuo.showcase.core.controller;
 
 import io.github.yingzhuo.showcase.model.dto.PetCreateDTO;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -38,6 +39,7 @@ public class PetController {
 	@Operation(
 		description = "创建/登记一个新的宠物"
 	)
+	@SecurityRequirement(name = "AuthHeader")
 	public Object createPet(@RequestBody PetCreateDTO dto, BindingResult bindingResult) {
 		return "ok";
 	}

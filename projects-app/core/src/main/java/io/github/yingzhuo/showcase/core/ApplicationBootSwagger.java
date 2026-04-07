@@ -16,6 +16,7 @@
 
 package io.github.yingzhuo.showcase.core;
 
+import io.github.yingzhuo.showcase.core.misc.SwaggerConstants;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeIn;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;
@@ -27,7 +28,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @SecurityScheme(
-	name = "AuthHeader",
+	name = SwaggerConstants.AUTH_HEADER,
 	type = SecuritySchemeType.APIKEY,
 	in = SecuritySchemeIn.HEADER,
 	paramName = "X-Auth-Token",

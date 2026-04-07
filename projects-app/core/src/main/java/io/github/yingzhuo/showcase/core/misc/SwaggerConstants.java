@@ -16,17 +16,11 @@
 
 package io.github.yingzhuo.showcase.core.misc;
 
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+public final class SwaggerConstants {
 
-import java.lang.annotation.*;
+	private SwaggerConstants() {
+		super();
+	}
 
-import static java.lang.annotation.ElementType.METHOD;
-import static java.lang.annotation.ElementType.TYPE;
-
-@Inherited
-@Documented
-@Target({METHOD, TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@SecurityRequirement(name = SwaggerConstants.AUTH_HEADER)
-public @interface SecurityAuthHeader {
+	public static final String AUTH_HEADER = "AuthHeader";
 }

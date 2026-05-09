@@ -6,7 +6,7 @@ else
 		GRADLEW := $(MAKEFILE_PATH)/gradlew
 endif
 
-.DEFAULT_GOAL=usage
+.DEFAULT_GOAL := usage
 
 .PHONY: usage \
 	clean purge rebuild-build-logic \
